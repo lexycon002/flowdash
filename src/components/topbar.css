@@ -1,0 +1,85 @@
+.topbar-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--bs-body-bg);
+}
+.topbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.topbar-wrapper .topbar-icon-toggle {
+    font-size: 30px;
+}
+.topbar-wrapper .topbar-input-search {
+    position: relative;
+}
+.topbar-wrapper .topbar-input-search input {
+    width:40vw;
+    height:30px;
+    border-radius: 15px;
+    border: 1px solid var(--bs-gray-dark);
+    padding-left: 30px;
+    outline: none;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-gray-500);
+    font-family: "Noto Sans", sans-serif;
+}
+.topbar-wrapper .topbar-input-search span {
+    position: absolute;
+    left:2%;
+    top:20%;
+}
+.topbar-wrapper .topbar-profile {
+    border: 1px solid red;
+    border-radius: 50%;
+    height:40px;
+    width:40px;
+}
+.topbar-wrapper .topbar-profile img {
+    width: 30px;
+    height:30px;
+    border-radius:50%;
+}
+.topbar-icon-toggle, 
+.topbar-profile, 
+.topbar-check, .topbar-country, 
+.topbar-social-menus, 
+.topbar-notification, .topbar-cart {
+    cursor: pointer;
+    font-size:25px;
+}
+
+.topbar-country img {
+    width: 30px;
+    height: 30px;
+}
+.topbar-country .topbar-flag-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.topbar-country .topbar-flag-name .title {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.topbar-country .flag-dropdown {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    left: auto;
+    background: var(--bs-body-bg);
+    border: 1px solid #ccc;
+    z-index: 10;
+    padding: 12px;
+    border-radius: 10px;
+    min-width: 120px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
