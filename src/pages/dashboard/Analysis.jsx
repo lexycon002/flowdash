@@ -16,18 +16,18 @@ import TotalViewsChart from './TotalViewsChart';
 import TotalAccountsChart from './TotalAccountschart';
 import VisitorsGrowthChart from './VisitorsGrowthChart';
 import SocialLeads from './SocialLeads';
+import NewUser from './NewUser';
 
 function Analysis() {
 
   const Stat = [
-    { icon: <MdCampaign size={20} color="#ff00cc" />,label: "Campaigns",count: 62,change: 28,},
-    {icon: <MdEmail size={20} color="#00c9ff" />,label: "Emailed",count: 748,change: -15,
-  },
-  {icon: <MdMarkEmailRead size={20} color="#00ffaa" />,label: "Opened",count: 83,change: 30.5,},
-  {icon: <MdOutlineMarkEmailUnread size={20} color="#ffaa00" />,label: "Clicked",count: 321,change: -34.6,},
-  {icon: <MdSubscriptions size={20} color="#ffcc00" />,label: "Subscribed",count: 658,change: 53,},
-  {icon: <MdReportGmailerrorred size={20} color="#ff4444" />,label: "Spam Message",count: 129,change: -47,},
-  {icon: <MdVisibility size={20} color="#9966ff" />,label: "Views Mails",count: 10205,change: 68,},
+    {icon: <MdCampaign size={20} color="#ff00cc" />,label: "Campaigns",count: 62,change: 28,},
+    {icon: <MdEmail size={20} color="#00c9ff" />,label: "Emailed",count: 748,change: -15,},
+    {icon: <MdMarkEmailRead size={20} color="#00ffaa" />,label: "Opened",count: 83,change: 30.5,},
+    {icon: <MdOutlineMarkEmailUnread size={20} color="#ffaa00" />,label: "Clicked",count: 321,change: -34.6,},
+    {icon: <MdSubscriptions size={20} color="#ffcc00" />,label: "Subscribed",count: 658,change: 53,},
+    {icon: <MdReportGmailerrorred size={20} color="#ff4444" />,label: "Spam Message",count: 129,change: -47,},
+    {icon: <MdVisibility size={20} color="#9966ff" />,label: "Views Mails",count: 10205,change: 68,},
   ]
   return (
     <>
@@ -233,7 +233,7 @@ function Analysis() {
               <SocialLeads/>
             </div>
             <div className="analysis-campaigne-stat analysis-new-users">
-
+                <NewUser/>
             </div>
           </div>
           <div className="analysis-recent-order">

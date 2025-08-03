@@ -1,14 +1,6 @@
 // SocialLeads.js
 import React from 'react';
-import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaInstagram,
-  FaSnapchatGhost,
-  FaGoogle,
-  FaYahoo,
-  FaSpotify,
-} from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn,FaInstagram,FaSnapchatGhost,FaGoogle,FaYahoo,FaSpotify } from 'react-icons/fa';
 
 const leadsData = [
   { name: 'Facebook', percent: 55, color: '#1877f2', icon: <FaFacebookF /> },
