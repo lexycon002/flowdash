@@ -1,16 +1,16 @@
 import React from 'react';
 // --- Components ---
-import CustomSemiCircle from '../../pages/dashboard/CustomSemiCircle';
-import CustomZigZag from '../../pages/dashboard/CustomZigZag';
-import MonthlyRevenueChart from '../../pages/dashboard/MonthlyRevenueChart';
-import DeviceType from '../../pages/dashboard/DeviceType';
-import TotalClicksChart from '../../pages/dashboard/TotalClicksChart';
-import TotalViewsChart from '../../pages/dashboard/TotalViewsChart';
-import TotalAccountsChart from '../../pages/dashboard/TotalAccountsChart';
-import VisitorsGrowthChart from '../../pages/dashboard/VisitorsGrowthChart';
-import SocialLeads from '../../pages/dashboard/SocialLeads';
-import NewUser from '../../pages/dashboard/NewUser';
-import RecentOrder from '../../pages/dashboard/RecentOrder';
+import CustomSemiCircle from './CustomSemiCircle';
+import  CustomZigZag  from "./CustomZigZag";
+import MonthlyRevenueChart from './MonthlyRevenueChart';
+import DeviceType from './DeviceType';
+import TotalClicksChart from './TotalClicksChart';
+import TotalViewsChart from './TotalViewsChart';
+import TotalAccountsChart from './TotalAccountsChart';
+import VisitorsGrowthChart from './VisitorsGrowthChart';
+import SocialLeads from './SocialLeads';
+import NewUser from './NewUser';
+import RecentOrder from './RecentOrder';
 
 // --- Icons & Assets ---
 import { MdCampaign, MdEmail, MdMarkEmailRead, MdOutlineMarkEmailUnread, MdSubscriptions, MdReportGmailerrorred, MdVisibility } from "react-icons/md";
