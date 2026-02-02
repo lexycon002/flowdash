@@ -20,7 +20,7 @@ const TotalAccountsChart = () => {
           return gradient;
         },
         tension: 0.4,
-        pointRadius: 0, // Make points visible for tooltip
+        pointRadius: 0, // Make points visible 
         pointBackgroundColor: '#ffcc00',
         pointBorderColor: '#fff',
         pointBorderWidth: 2,
