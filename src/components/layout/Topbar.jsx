@@ -15,7 +15,7 @@ import {
 import myImg from "../../assets/myImage.png"; 
 import Catalan from "../../assets/catalan.png";
 import Canada from "../../assets/canada.png";
-import German from "../../assets/German.png";
+import German from "../../assets/german.png";
 import Hindi from "../../assets/hindi.png";
 import Spanish from "../../assets/spanish.png";
 import Belize from "../../assets/belize.png";
