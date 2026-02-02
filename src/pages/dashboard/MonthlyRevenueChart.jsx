@@ -1,5 +1,6 @@
 // MonthlyRevenueChart.jsx
 import React, { useEffect, useRef } from "react";
+import { useTheme } from "../../context/ThemeContext";
 import {
   Chart as ChartJS,
   BarElement,
@@ -14,6 +15,7 @@ ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const MonthlyRevenueChart = () => {
   const canvasRef = useRef(null);
+  const { theme } = useTheme();
 
   const data = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
@@ -57,24 +59,34 @@ const MonthlyRevenueChart = () => {
           display: false,
         },
         ticks: {
-          color: "#fff",
+          color: theme === 'dark' ? "#fff" : "#1f2937",
         },
       },
       y: {
         beginAtZero: true,
         ticks: {
-          color: "#fff",
+          color: theme === 'dark' ? "#fff" : "#1f2937",
         },
         grid: {
-          color: "#2c2f4a",
+          color: theme === 'dark' ? "#2c2f4a" : "#e5e7eb",
         },
       },
     },
   };
 
   return (
-    <div style={{ height: "250px", background: "#0d0f2b", borderRadius: "10px", padding: "20px" }}>
-      <h4 style={{ color: "#fff", marginBottom: "10px", textAlign: "center" }}>
+    <div style={{ 
+      height: "250px", 
+      background: theme === 'dark' ? "#0d0f2b" : "#ffffff", 
+      borderRadius: "10px", 
+      padding: "20px",
+      border: theme === 'dark' ? "none" : "1px solid #e5e7eb"
+    }}>
+      <h4 style={{ 
+        color: theme === 'dark' ? "#fff" : "#1f2937", 
+        marginBottom: "10px", 
+        textAlign: "center" 
+      }}>
         Monthly Revenue
       </h4>
       <Bar data={data} options={options} />

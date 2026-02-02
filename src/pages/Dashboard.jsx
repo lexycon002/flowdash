@@ -25,23 +25,23 @@ function Dashboard() {
 
   return (
     <>
-    <div className="dashboard-container">
+    <div className="mx-6 mr-6 mt-8 flex justify-between items-center pb-6 border-b border-gray-700">
       
-      <div className="dashboard-wrap">
-        <h3>Dashboard</h3>
-         <div className="border-right"></div>
-         <div className="dashboard-text">
-              <span className='dashboard-icon'> <IoIosHome /> </span>
-              <p>Analysis</p>
+      <div className="flex items-center gap-4">
+        <h2 className="text-2xl font-bold text-white">Dashboard</h2>
+         <div className="h-6 border-l border-gray-600"></div>
+         <div className="flex items-center gap-2">
+              <span className='text-lg text-indigo-500'> <IoIosHome /> </span>
+              <p className="text-base text-gray-400">Analysis</p>
          </div>
       </div>
-      <div className="button-group">
-        <div className="icon-dropdown-wrapper" ref={dropdownRef}>
+      <div className="flex items-center gap-2">
+        <div className="relative flex items-center" ref={dropdownRef}>
           <button className="dashboard-btn">
             Settings
           </button>
           <button onClick={handleDropDownToggle} className="dashboard-icon-btn">
-              <IoMdArrowDropdown size={25}/>
+              <IoMdArrowDropdown size={20}/>
           </button>
           {isdroppedDown && (
             <div className="drop-menu">
@@ -56,7 +56,7 @@ function Dashboard() {
         </div>
       </div>
     </div>
-          <Analysis />
+    <Analysis />
     </>
   )
 }

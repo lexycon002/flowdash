@@ -1,4 +1,3 @@
-// VisitorsGrowth.js
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, PointElement, LinearScale, CategoryScale, Tooltip } from 'chart.js';
@@ -14,18 +13,19 @@ const VisitorsGrowthChart = () => {
         data: [10, 30, 15, 35, 25, 60, 30],
         borderColor: '#99ff33',
         backgroundColor: 'rgba(0,0,0,0)',
-        tension: 0,
+        tension: 0, // CHANGED: Set to 0 for sharp, pointed lines
         pointBackgroundColor: '#fff',
         pointBorderColor: '#99ff33',
         pointBorderWidth: 3,
         pointRadius: 5,
         fill: true,
-        fillColor: 'green',
       },
     ],
   };
 
   const options = {
+    responsive: true,
+    maintainAspectRatio: false,
     plugins: { legend: { display: false } },
     scales: {
       x: { display: false },
@@ -33,8 +33,7 @@ const VisitorsGrowthChart = () => {
     },
   };
 
-  
-  // Custom plugin to draw a dotted vertical line (crosshair) on hover
+  // Plugin to draw the dotted crosshair line
   const crosshairPlugin = {
     id: 'customCrosshair',
     afterDraw: (chart) => {
@@ -55,8 +54,13 @@ const VisitorsGrowthChart = () => {
         ctx.restore();
       }
     }
-}
-    return <Line data={data} options={options} height={100} plugins={[crosshairPlugin]}/>
   };
+
+  return (
+    <div className="h-[150px] w-full"> {/* Increased height slightly for better visibility */}
+        <Line data={data} options={options} plugins={[crosshairPlugin]} />
+    </div>
+  );
+};
 
 export default VisitorsGrowthChart;

@@ -1,6 +1,6 @@
-// SocialLeads.js
 import React from 'react';
-import { FaFacebookF, FaLinkedinIn,FaInstagram,FaSnapchatGhost,FaGoogle,FaYahoo,FaSpotify } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaSnapchatGhost, FaGoogle, FaYahoo, FaSpotify } from 'react-icons/fa';
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 const leadsData = [
   { name: 'Facebook', percent: 55, color: '#1877f2', icon: <FaFacebookF /> },
@@ -14,55 +14,41 @@ const leadsData = [
 
 const SocialLeads = () => {
   return (
-    <div className="social-leads">
-      <h3>Social Leads</h3>
-      {leadsData.map((lead, idx) => (
-        <div className="lead-row" key={idx}>
-          <div className="lead-left">
-            <div className="icon-circle" style={{ backgroundColor: lead.color }}>
-              {lead.icon}
+    <div>
+      <div className="flex justify-between items-center mb-6">
+         <h3 className="text-white font-bold">Social Leads</h3>
+         <BsThreeDotsVertical className="text-gray-500 cursor-pointer"/>
+      </div>
+      
+      <div className="space-y-6">
+        {leadsData.map((lead, idx) => (
+          <div className="flex justify-between items-center" key={idx}>
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full flex text-white items-center justify-center text-lg shadow-lg" style={{ backgroundColor: lead.color }}>
+                {lead.icon}
+              </div>
+              <div>
+                 <p className="text-gray-300 font-medium">{lead.name}</p>
+                 <p className="text-xs text-gray-500">Target: {lead.percent}%</p>
+              </div>
             </div>
-            <span>{lead.name}</span>
+            
+            {/* Progress Circle Visual */}
+            <div className="relative w-10 h-10 flex items-center justify-center">
+               <svg className="w-full h-full transform -rotate-90">
+                 <circle cx="20" cy="20" r="16" stroke="#2e2e4e" strokeWidth="3" fill="none" />
+                 <circle cx="20" cy="20" r="16" stroke={lead.color} strokeWidth="3" fill="none" 
+                   strokeDasharray="100" 
+                   strokeDashoffset={100 - lead.percent} 
+                   strokeLinecap="round" 
+                 />
+               </svg>
+               <span className="absolute text-[10px] text-gray-400">{lead.percent}%</span>
+            </div>
           </div>
-          <div className="lead-right">
-            <span>{lead.percent}%</span>
-            <ProgressRing percentage={lead.percent} color={lead.color} />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  );
-};
-
-const ProgressRing = ({ percentage, color }) => {
-  const radius = 10;
-  const stroke = 3;
-  const normalizedRadius = radius - stroke * 0.5;
-  const circumference = normalizedRadius * 2 * Math.PI;
-  const strokeDashoffset = circumference - (percentage / 100) * circumference;
-
-  return (
-    <svg height={radius * 2} width={radius * 2}>
-      <circle
-        stroke="#2e2e4e"
-        fill="transparent"
-        strokeWidth={stroke}
-        r={normalizedRadius}
-        cx={radius}
-        cy={radius}
-      />
-      <circle
-        stroke={color}
-        fill="transparent"
-        strokeWidth={stroke}
-        strokeLinecap="round"
-        strokeDasharray={circumference}
-        strokeDashoffset={strokeDashoffset}
-        r={normalizedRadius}
-        cx={radius}
-        cy={radius}
-      />
-    </svg>
   );
 };
 
